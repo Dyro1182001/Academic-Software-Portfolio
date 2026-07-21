@@ -1,0 +1,98 @@
+use Obligatorio
+
+db.createCollection("ComunidadGKA", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["usuario", "idUsuario", "interacciones"],
+      properties: {
+        usuario: {
+          bsonType: "string",
+          description: "Por favor, ingrese una cadena de texto."
+        },
+        idUsuario: {
+          bsonType: "int",
+          description: "Por favor, ingrese un número entero."
+        },
+        interacciones: {
+          bsonType: "array",
+          description: "Por favor, ingrese un arreglo de objetos.",
+          items: {
+            bsonType: "object",
+            required: ["tipoInteraccion", "contenidoInteraccion"],
+            properties: {
+              tipoInteraccion: {
+                bsonType: "string",
+                description: "Por favor, ingrese una cadena de texto."
+              },
+              contenidoInteraccion: {
+                bsonType: "string",
+                description: "Por favor, ingrese una cadena de texto."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+});
+
+db.ComunidadGKA.insertOne({
+  usuario: "Fanatico",
+  idUsuario: 1,
+  interacciones: [
+    { tipoInteraccion: "texto", contenidoInteraccion: "Primer posteo del Fanatico" }
+  ]
+});
+
+db.ComunidadGKA.insertOne({
+  usuario: "Kiter",
+  idUsuario: 2,
+  interacciones: [
+    { tipoInteraccion: "texto", contenidoInteraccion: "Primer posteo del Kiter" },
+    { tipoInteraccion: "foto", contenidoInteraccion: "URL de la primera foto" }
+  ]
+});
+
+
+db.ComunidadGKA.insertOne({
+  usuario: "Usuario",
+  idUsuario: 3,
+  interacciones: [
+    { tipoInteraccion: "texto", contenidoInteraccion: "Primer posteo del Usuario" }
+  ]
+});
+
+var kiterInteracciones = db.ComunidadGKA.findOne({ usuario: "Kiter" }).interacciones;
+print(`Interacciones del Kiter:`);
+printjson(kiterInteracciones);
+
+
+db.ComunidadGKA.updateOne(
+  { usuario: "Kiter" },
+  {
+    $push: {
+      interacciones: {
+        tipoInteraccion: "texto",
+        contenidoInteraccion: "Segundo posteo del Kiter"
+      }
+    }
+  }
+);
+
+db.ComunidadGKA.updateOne(
+  { usuario: "Kiter" },
+  {
+    $push: {
+      interacciones: {
+        tipoInteraccion: "video",
+        contenidoInteraccion: "URL del primer video del Kiter"
+      }
+    }
+  }
+);
+
+
+var kiterInteraccionesActualizadas = db.ComunidadGKA.findOne({ usuario: "Kiter" }).interacciones;
+print(`Interacciones actualizadas del Kiter:`);
+printjson(kiterInteraccionesActualizadas);
