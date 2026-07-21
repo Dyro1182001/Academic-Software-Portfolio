@@ -2,13 +2,14 @@
 
 A web application packaged as an Android mobile application using Capacitor.
 
-## Technologies
+## Technologies & Tools
 
 - HTML
 - CSS
 - JavaScript
 - Capacitor
 - Android
+- Android Studio
 
 ## Project Structure
 
