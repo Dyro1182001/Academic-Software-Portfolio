@@ -17,11 +17,11 @@ Cloud deployment and DevOps practices are not the primary focus of this portfoli
 
 The projects in this portfolio are organized by their primary focus:
 
-* `01-backend-projects` — Backend applications, APIs, and server-side development.
-* `02-fullstack-projects` — Projects combining frontend and backend components into complete applications.
-* `03-frontend-projects` — Web applications and projects focused primarily on user interfaces.
-* `04-databases` — Database design, SQL queries, data modeling, and persistence-related work.
-* `05-deployment` — Selected documentation and materials related to cloud deployment.
+* `Backend-projects` — Backend applications, APIs, and server-side development.
+* `Fullstack-projects` — Projects combining frontend and backend components into complete applications.
+* `Frontend-projects` — Web applications and projects focused primarily on user interfaces.
+* `Databases` — Database design, SQL queries, data modeling, and persistence-related work.
+* `Deployment` — Selected documentation and materials related to cloud deployment.
 
 ## About the Projects
 
