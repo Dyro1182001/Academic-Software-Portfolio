@@ -14,7 +14,7 @@ A web application packaged as an Android mobile application using Capacitor.
 ## Project Structure
 
 - `www/` - Contains the web application's HTML, CSS, and JavaScript files.
-- `android/` - Contains the Android project generated with Capacitor.
+- `android/` - Contains the Android project generated with Capacitor and configured for Android Studio.
 
 ## Dependencies
 
