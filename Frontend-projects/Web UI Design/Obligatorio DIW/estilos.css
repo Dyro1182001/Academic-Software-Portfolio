@@ -1,0 +1,403 @@
+@import url('https://fonts.cdnfonts.com/css/sf-distant-galaxy');
+
+*{
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: black;
+    margin:auto
+}
+
+/* background: #ffffff url(/imagenes/fondo_de_pantalla.jpg) center bottom;
+background-repeat: repeat-y; */
+
+/* EMPIEZA HEADER */
+section{
+    margin: auto;
+    width: 1440px;
+}
+
+header {
+    height: 40px;
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+    background-color:  rgb(0, 0, 27);
+}
+
+header ul li { 
+  padding: 0px 50px;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #ffe91f
+}
+
+section{
+    display: flex;
+}
+/* TERMINA HEADER */
+
+/* EMPIEZA POSTER */
+h1{
+    font-family: 'SF Distant Galaxy', sans-serif;
+    padding-top:550px;
+    text-shadow: 1px 1px 2px #000;
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+
+
+#slider{
+   height: 750px;
+   background-image: url(imagenes/fondo_de_pantalla.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+   text-align: center;
+   color: #ffe91f;
+}
+
+#slider p{
+    margin: 20px;
+    text-shadow: 1px 1px 0 #000;
+    font-size: 35px;
+
+}
+
+
+
+/* TERMINA POSTER */
+
+h2{
+    letter-spacing: 3px;
+    font-family: 'SF Distant Galaxy', sans-serif;
+    margin: 15px;
+}
+
+/* COMIENZA SINOPSIS */
+#sinopsis{
+    background-color: darkgray;
+    display:flex;
+    gap:15px;
+    padding-bottom: 10px;
+}
+
+#sinopsis article{
+    width: 50%;
+    margin-left: 10px;
+}
+
+#sinopsis article:nth-child(1) p{
+    text-align: left;
+    padding-bottom: 40px;
+}
+
+#sinopsis article:nth-child(1) a{
+    color: rgb(53, 53, 250);
+}
+
+#sinopsis img{
+    margin-left: auto;
+    margin-right: auto;
+    width:650px;
+    padding-top: 15px;
+}
+
+/* TERMINA SINOPSIS */
+
+/* EMPIEZA CRITICAS */
+#criticas{
+    text-align: center;
+    background-color: lightgray;
+    text-align: center;
+    display:flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    
+}
+
+#criticas cite{
+    margin: 10px;
+}
+
+#criticas article:nth-child(1) blockquote{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
+#criticas article:nth-child(2) blockquote{
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
+#criticas article:nth-child(3) blockquote{
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
+#criticas article:nth-child(1){
+    width: 100%;
+    display: block;
+    padding-bottom: 20px;
+}
+
+#criticas article:nth-child(2){
+    margin-left: 120px;
+    width: calc(50% - 200px);
+    padding-bottom: 20px;
+}
+
+#criticas article:nth-child(3){
+    margin-left: 120px;
+    width: calc(50% - 200px);
+    padding-bottom: 20px;
+}
+/* TERMINA CRITICAS */
+
+/* EMPIEZA ACTORES */
+#actores{
+    background-color: darkgray;
+    display: grid;
+    gap: 1px;
+    margin: auto;
+}
+
+#actores h2{
+    width: 100%;
+}
+
+#actores div:nth-child(1){
+    grid-column: span 4;
+    margin-bottom: 10px;
+}
+
+#actores div:nth-child(1) p{
+    text-align: left;
+    margin-left: 5px;
+}
+
+#actores div:nth-child(1) h2{
+    margin-bottom: -10px;
+}
+
+#actores article:nth-child(2){
+    grid-row: span 2;
+    text-align: center;
+}
+
+#actores article:nth-child(2) img{
+    height: 740px;
+}
+
+#actores article:nth-child(2) h3,p{
+    padding-top: 20px;
+}
+
+#actores article:nth-child(3){
+    text-align: center;
+}
+
+#actores article:nth-child(3) img{
+    height: 300px;
+}
+
+#actores article:nth-child(3) h3,p{
+    padding-top: 20px;
+}
+
+#actores article:nth-child(4){
+    text-align: center;
+}
+
+#actores article:nth-child(4) h3,p{
+    padding-top: 20px;
+}
+
+#actores article:nth-child(4) img{
+    height: 300px;
+}
+
+#actores article:nth-child(5){
+    text-align: center;
+}
+
+#actores article:nth-child(5) h3,p{
+    padding-top: 20px;
+}
+
+#actores article:nth-child(5) img{
+    height: 300px;
+}
+
+#actores article:nth-child(6){
+    grid-column: span 2;
+    text-align: center;
+}
+
+#actores article:nth-child(6) h3,p{
+    padding-top: 20px;
+}
+
+#actores article:nth-child(6) img{
+    width:500px;
+    margin-top: 10px;
+}
+
+#actores article:nth-child(7){
+    text-align: center;
+}
+
+#actores article:nth-child(7) h3,p{
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+#actores article:nth-child(7) img{
+    height: 335px;
+    margin-top: 10px;
+}
+
+/* TERMINA ACTORES */
+
+/* EMPIEZA INFO TECNICA */
+#infoTecnica{
+    background-color: lightgray;
+    display: flex;
+    gap: 50px;
+}
+
+#articleInfoTecnica{
+    width: 50%;
+}
+
+table{
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    border-collapse: collapse;
+}
+
+table img{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: lightslategray;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #9db3c7;
+}
+
+#articleContacto{
+    width: 50%;
+    text-align: left;
+}
+
+#articleContacto div:nth-child(2){
+    display: block;
+    
+}
+
+#labelNombre{
+    margin-right: 197px;
+}
+
+#selectPais{
+    width: 335px;
+    height: 30px;
+}
+
+#inputNombre{
+    margin-bottom: 10px;
+    margin-right: 10px;
+    height: 25px;
+    width: 250px;
+}
+
+#inputMail{
+    margin-bottom: 10px;
+    width: 600px;
+    height: 25px
+}
+
+#labelPuntaje{
+    margin-right:144px;
+}
+
+#pCinefilo{
+    display: inline;
+}
+
+#selectPuntaje{
+    margin-right:125px;
+    margin-bottom: 10px;
+    height: 25px;
+    width: 100px;
+}
+
+textarea{
+    width: 600px;
+    height: 150px;
+}
+
+
+#btnContacto{
+    width: 75px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 525px;
+}
+
+/* TERMINA INFO TECNICA */
+
+/* EMPIEZA TRAILER */
+#trailer{
+    background-color: black;
+    display: grid;
+    grid-template-rows: repeat(auto-fill,1fr);
+    gap: 5px;
+}
+
+#trailer h2{
+    color: #FFE81F;
+}
+
+iframe{
+    height:809px;
+    width:100%;
+}
+/* TERMINA TRAILER */
+
+/* EMPIEZA FOOTER */
+footer {
+    background-color: rgb(0, 0, 27);
+    padding: 15px;
+    text-align: center;
+}
+
+footer nav a img{
+    width:40px;
+    margin-left:15px;
+    margin-right:15px;
+}
+/* TERMINA FOOTER */
+
