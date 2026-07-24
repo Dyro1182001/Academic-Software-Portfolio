@@ -1,6 +1,0 @@
-definir x operadores (y darles el alta) antes que a los huespedes
-if id<=tal rol es a, else, rol es b
-preguntar al profesor si eso sirve
-
-El tema de los datos personales que sigue sin andar = solucionado
-
