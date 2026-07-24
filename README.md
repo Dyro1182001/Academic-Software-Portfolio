@@ -1,6 +1,6 @@
 # Academic & Personal Software Portfolio
 
-Welcome to my software development portfolio. This repository brings together a selection of academic and personal projects created throughout my studies and continued learning in Information Technology.
+Welcome to my software development portfolio. This repository brings together a selection of academic and personal projects created throughout my studies and continued learning in IT.
 
 The projects included here reflect my progression as a developer, with a particular focus on backend development, databases, and full-stack applications. Rather than serving as a collection of individual coursework assignments, this repository is intended to showcase the practical skills and technical knowledge I have developed through different projects and learning experiences.
 
