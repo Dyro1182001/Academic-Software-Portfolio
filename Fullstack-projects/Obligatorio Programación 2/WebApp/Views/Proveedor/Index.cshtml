@@ -1,0 +1,55 @@
+﻿<!-- Vista que permitirá a un Operador ver la lista de todos los operadores registrados.-->
+@model IEnumerable<Dominio.Proveedor>
+
+@if (Context.Session.GetString("LogueadoRol") == "Operador")
+{
+
+    <h1>Index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Numero de telefono
+                </th>
+                <th>
+                    Direccion
+                </th>
+                <th>
+                    Descuento
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {  //var item in....
+                <tr>
+
+                    <td>
+                        @item._NombreProveedor
+                    </td>
+                    <td>
+                        @item._NumTelefono
+                    </td>
+                    <td>
+                        @item._Direccion
+                    </td>
+                    <td>
+                        @item._Descuento %
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar descuento", "Edit", "Proveedor", new {  id=item._Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h1>NO TIENE LOS PERMISOS REQUERIDOS PARA ACCEDER A ESTA VISTA</h1>
+}

@@ -1,0 +1,71 @@
+﻿<!-- Vista que permitirá a los Huespedes mostrar todas sus agendas.-->
+@model IEnumerable<Dominio.Agenda>
+
+@if (Context.Session.GetString("LogueadoRol") == "Huesped")
+{
+
+    <h1>Mis Agendas</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Huesped
+                </th>
+                <th>
+                    Actividad
+                </th>
+                <th>
+                    Fecha
+                </th>
+                <th>
+                    Lugar
+                </th>
+                <th>
+                    Costo Final
+                </th>
+                <th>
+                    Estado
+                </th>
+                <th>
+                    Proveedor
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {  //var item in....
+                <tr>
+
+                    <td>
+                        @item._Huesped._NombreHuesped @item._Huesped._ApellidoHuesped
+
+                    </td>
+                    <td>
+                        @item._Actividad._NombreActividad
+                    </td>
+                    <td>
+                        @item._Actividad._FechaActividad
+                    </td>
+                    <td>
+                        Lugar
+                    </td>
+                    <td>
+                        USD @Math.Round(item._CostoFinal,4)
+                    </td>
+                    <td>
+                        @item._EstadoAgenda
+                    </td>
+                    <td>
+                        Proveedor
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h1>NO TIENE LOS PERMISOS REQUERIDOS PARA ACCEDER A ESTA VISTA</h1>
+}

@@ -1,0 +1,32 @@
+﻿<!-- Vista que permitirá a los Operadores cambiar su porcentaje de descuento.-->
+@model Dominio.Proveedor
+
+@section Scripts{
+    <script src="/js/Validaciones/EditarDescuento.js"></script>
+}
+
+@if (Context.Session.GetString("LogueadoRol") == "Operador")
+{
+    <h1>Fijar descuento</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" id="editarDescuento">
+                <div class="form-group">
+                    <label class="control-label">Porcentaje de descento</label>
+                    <input asp-for="_Descuento" type="number" class="form-control" id="Descuento" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Editar" class="btn btn-primary" />
+                    <a asp-action="Index">Volver a la lista</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <p id="Mensaje">@ViewBag.msg</p>
+}
+else
+{
+    <h1>NO TIENE LOS PERMISOS REQUERIDOS PARA ACCEDER A ESTA VISTA</h1>
+}

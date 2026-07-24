@@ -1,0 +1,20 @@
+﻿<!-- Vista que permitirá a los Huespedes agendarse a una actividad.-->
+@model Dominio.Agenda
+
+@if (Context.Session.GetString("LogueadoRol") == "Huesped")
+{
+    <h1>¿Está seguro que desea agendarse a esta actividad?</h1>
+    <div>
+        <form method="post">
+            <input type="submit" value="Confirmar" class="btn btn-primary" /> |
+            <input type="checkbox" name="IsChecked" value="true" /><span> Confirmo que quiero agendarme a esta actividad</span><br />
+            <a asp-action="Agendas">Volver a la lista</a>
+        </form>
+    </div>
+    <p>@ViewBag.msg</p>
+
+}
+else
+{
+    <h1>NO TIENE LOS PERMISOS REQUERIDOS PARA ACCEDER A ESTA VISTA</h1>
+}

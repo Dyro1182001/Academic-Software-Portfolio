@@ -1,0 +1,1 @@
+Creemos que la carpeta "WebApplication" es el primer prototipo que habiamos hecho que tuvimos que eliminar, ANTE LA DUDA DEJAMOS LA CARPETA AHI, pero nuestro obligatorio es el de la carpeta "WebApp"

@@ -1,0 +1,65 @@
+﻿<!-- Vista que permitirá a los Huespedes comprobar sus datos personales.-->
+@model Dominio.Huesped
+@if (Context.Session.GetString("LogueadoRol") == "Huesped")
+{
+
+    <h1>Detalles</h1>
+    <div>
+        <h4>Datos del usuario</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Tipo de documento
+            </dt>
+            <dd class="col-sm-10">
+                @Model._TipoDocumento
+            </dd>
+            <dt class="col-sm-2">
+                N° de documento
+            </dt>
+            <dd class="col-sm-10">
+                @Model._NumDocumento
+            </dd>
+            <dt class="col-sm-2">
+                Nombre
+            </dt>
+            <dd class="col-sm-10">
+                @Model._NombreHuesped
+            </dd>
+            <dt class="col-sm-2">
+                Apellido
+            </dt>
+            <dd class="col-sm-10">
+                @Model._ApellidoHuesped
+            </dd>
+            <dt class="col-sm-2">
+                Habitacion
+            </dt>
+            <dd class="col-sm-10">
+                @Model._Habitacion
+            </dd>
+            <dt class="col-sm-2">
+                Fecha de Nacimiento
+            </dt>
+            <dd class="col-sm-10">
+                @Model._FechaNacimiento
+            </dd>
+            <dt class="col-sm-2">
+                Email de registro
+            </dt>
+            <dd class="col-sm-10">
+                @Model._EmailRegistro
+            </dd>
+            <dt class="col-sm-2">
+                Nivel de fidelizacion
+            </dt>
+            <dd class="col-sm-10">
+                @Model._ValorNumerico
+            </dd>
+        </dl>
+    </div>
+}
+else
+{
+    <h1>NO TIENE LOS PERMISOS REQUERIDOS PARA ACCEDER A ESTA VISTA</h1>
+}

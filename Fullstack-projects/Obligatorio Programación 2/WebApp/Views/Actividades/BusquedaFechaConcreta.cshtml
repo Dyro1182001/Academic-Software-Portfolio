@@ -1,0 +1,92 @@
+﻿<!-- Vista que permitirá definir cómo se mostraran las distintas actividades que estemos buscando en base a una fecha concreta ingresada por el usuario.-->
+
+@model IEnumerable<Dominio.Actividad>
+<h1>Index</h1>
+
+<form method="post">
+	<div class="form-group">
+		<label class="control-label">Ingrese una fecha</label>
+		<input name="Fecha" type="date" class="form-control" required/>
+
+	</div>
+	<div class="form-group">
+		<input type="submit" value="Buscar" class="btn btn-primary" />
+	</div>
+</form>
+
+
+<h1>Index</h1>
+
+<p>
+	<a asp-action="Index">Listado de actividades</a>
+</p>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				Nombre
+			</th>
+			<th>
+				Fecha
+			</th>
+			<th>
+				Cupos Disponibles
+			</th>
+			<th>
+				Edad minima
+			</th>
+			<th>
+				Costo
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{  //var item in....
+			<tr>
+
+				<td>
+					@item._NombreActividad
+				</td>
+				<td>
+					@item._FechaActividad
+				</td>
+				<td>
+					@item._CantMaxPersonas
+				</td>
+				<td>
+					@item._EdadMinima
+				</td>
+				<td>
+					USD @item._Costo
+				</td>
+				<td>
+					@if (Context.Session.GetInt32("LogueadoId") == null)
+					{
+						@Html.ActionLink("Agendar", "Login", "Home", new {  Id=item._Id })
+					}
+					else if (Context.Session.GetString("LogueadoRol") == "Operador")
+					{
+
+
+					}
+					else
+					{
+						if (Dominio.Sistema.GetInstancia().BuscarAgendaIdH((int)Context.Session.GetInt32("LogueadoId"), item) == false)
+						{
+
+							@Html.ActionLink("Agendar", "Create", "Agenda", new {  Id=item._Id })
+
+						}
+						else
+						{
+							<p>Ya está agendado</p>
+						}
+					}
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

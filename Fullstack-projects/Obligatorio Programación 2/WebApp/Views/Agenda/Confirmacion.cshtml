@@ -1,0 +1,13 @@
+﻿<!-- Vista que permitirá a los Huespedes confirmar una agenda a una actividad.-->
+
+@model Dominio.Agenda
+<h1>Confirmar</h1>
+<h3>¿Está seguro que desea confirmar el pago?</h3>
+<div>
+    <form method="post">
+        <input type="submit" value="Confirmar" class="btn btn-primary" /> |
+        <input type="checkbox" name="IsChecked" value="true" /><span>Entiendo que esta operación no se puede deshacer.</span>
+        <a asp-action="Agendas">Volver a la lista</a>
+    </form>
+</div>
+<p>@ViewBag.msg</p>

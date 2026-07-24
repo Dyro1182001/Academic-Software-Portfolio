@@ -1,0 +1,55 @@
+﻿<!-- Vista que permitirá a los Huespedes registrarse en el sitio.-->
+
+@model Dominio.Huesped
+
+@section Scripts{
+    <script src="/js/Validaciones/Registro.js"></script>
+}
+
+@if (Context.Session.GetString("LogueadoRol") == null)
+{
+    <h1>Registro de Usuario</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create" id="registro">
+                <div class="form-group" id="registro">
+                    <label class="control-label">Tipo de Documento</label>
+                    <select asp-for="_TipoDocumento" id="IdSelect" class="form-control">
+                        <option value="CI">CI</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                    <label class="control-label">Numero de Documento</label>
+                    <input asp-for="_NumDocumento" type="text" class="form-control" id="numDoc" />
+                    <label class="control-label">Nombre</label>
+                    <input asp-for="_NombreHuesped" type="text" class="form-control" id="nombreHuesped" />
+                    <label class="control-label">Apellido</label>
+                    <input asp-for="_ApellidoHuesped" type="text" class="form-control" id="apellidoHuesped" />
+                    <label class="control-label">Habitacion</label>
+                    <input asp-for="_Habitacion" type="text" class="form-control" id="habitacion" />
+                    <label class="control-label">Fecha de Nacimiento</label>
+                    <input asp-for="_FechaNacimiento" type="date" class="form-control" id="fechaNacimiento" />
+                    <label class="control-label">Email</label>
+                    <input asp-for="_EmailRegistro" type="email" class="form-control" id="emailRegistro" />
+                    <label class="control-label">Contraseña</label>
+                    <input asp-for="_Contrasenia" type="text" class="form-control" id="contra" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Registrarse" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @Html.ActionLink("Volver a Inicio", "Index", "Home")
+
+    <br />
+
+    <p id="Mensaje">@ViewBag.msg</p>
+}
+else
+{
+    <h1>NO TIENE LOS PERMISOS REQUERIDOS PARA ACCEDER A ESTA VISTA</h1>
+}
+

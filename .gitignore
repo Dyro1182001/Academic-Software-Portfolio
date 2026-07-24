@@ -1,7 +1,17 @@
+# Node.js
 node_modules/
+
+# Android / Gradle
 .gradle/
 build/
 .idea/
 local.properties
 *.apk
 *.aab
+
+# .NET / Visual Studio
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo

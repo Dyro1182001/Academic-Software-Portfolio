@@ -1,0 +1,22 @@
+﻿<!-- Vista que permitirá a los Operadores comprobar sus datos personales.-->
+
+@model Dominio.Operador
+@if (Context.Session.GetString("LogueadoRol") == "Operador")
+{
+<h1>Detalles</h1>
+<div>
+    <h4>Datos del operador</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Email de registro
+        </dt>
+        <dd class="col-sm-10">
+            @Model._EmailRegistro
+        </dd>
+    </dl>
+</div>
+    
+}else{
+    <h1>NO TIENE LOS PERMISOS REQUERIDOS PARA ACCEDER A ESTA VISTA</h1>
+}

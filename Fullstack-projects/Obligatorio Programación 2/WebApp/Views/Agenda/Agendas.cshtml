@@ -1,0 +1,99 @@
+﻿<!-- Vista que permitirá mostrar a los Operadores todas las agendas en el sistema.-->
+@model IEnumerable<Dominio.Agenda>
+
+@if (Context.Session.GetString("LogueadoRol") == "Operador")
+{
+    <h1>Listado de agendas</h1>
+
+
+    <form method="post">
+
+        <div class="form-group">
+            <label class="control-label">Tipo de Documento</label>
+            <select name="IdSelect" class="form-control">
+                <option value="CI">CI</option>
+                <option value="Pasaporte">Pasaporte</option>
+                <option value="Otros">Otros</option>
+            </select>
+            <label class="control-label">Numero de Documento</label>
+            <input name="numDocumento" type="text" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Buscar" class="btn btn-primary" />
+        </div>
+
+    </form>
+
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Huesped
+                </th>
+                <th>
+                    Actividad
+                </th>
+                <th>
+                    Fecha
+                </th>
+                <th>
+                    Lugar
+                </th>
+                <th>
+                    Costo Final
+                </th>
+                <th>
+                    Estado
+                </th>
+                <th>
+                    Proveedor
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {  //var item in....
+                <tr>
+                    <td>
+                        @item._Huesped._NombreHuesped @item._Huesped._ApellidoHuesped
+
+                    </td>
+                    <td>
+                        @item._Actividad._NombreActividad
+                    </td>
+                    <td>
+                        @item._Actividad._FechaActividad
+                    </td>
+                    <td>
+                        @item._Actividad.Lugar()
+                    </td>
+                    <td>
+                        USD @item._Actividad._Costo
+                    </td>
+                    <td>
+                        @item._EstadoAgenda
+                    </td>
+                    <td>
+                        @item._Actividad.Proveedor()
+                    </td>
+                    <td>
+                        @if (Context.Session.GetString("LogueadoRol") == "Operador" && item._EstadoAgenda == "PENDIENTE_PAGO")
+                        {
+                            @Html.ActionLink("Confirmar", "Confirmacion", "Agenda", new {  id=item._Id })
+                        }
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h1>NO TIENE LOS PERMISOS REQUERIDOS PARA ACCEDER A ESTA VISTA</h1>
+}

@@ -1,0 +1,36 @@
+﻿<!-- Vista que permitirá a cualquier usuario previamente registrado iniciar sesión.-->
+
+@section Scripts{
+    <script src="/js/Validaciones/Login.js"></script>
+}
+
+@if (Context.Session.GetString("LogueadoRol") == null)
+{
+    <h1>Inicio de Sesion</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post" id="login">
+                <div class="form-group">
+                    <label class="control-label">Email</label>
+                    <input name="Email" type="email" class="form-control" id="Email" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Contrasenia</label>
+                    <input name="Password" type="password" class="form-control" id="Password" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Iniciar Sesion" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <p id="Mensaje">@ViewBag.msg</p>
+}
+else
+{
+    <h1>NO TIENE LOS PERMISOS REQUERIDOS PARA ACCEDER A ESTA VISTA</h1>
+}
+
+
