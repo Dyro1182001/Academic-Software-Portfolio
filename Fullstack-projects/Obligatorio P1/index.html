@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/clases.js"></script>
+    <script src="js/manejoMenu.js"></script>
+    <script src="js/funciones.js"></script>
+    <title>Obligatorio</title>
+</head>
+
+<body>
+
+    <!-- COMIENZA EL LOGIN -->
+    <div id="divInicial">
+        <h2>Log In</h2>
+        <form id="formLogin">
+            <label for="inputUserLogin">Ingrese su nombre de usuario</label>
+            <input type="text" id="inputUserLogin">
+            <br>
+            <br>
+            <label for="inputPasswordLogin">Ingrese su contraseña</label>
+            <input type="password" id="inputPasswordLogin">
+            <br>
+            <br>
+            <input type="button" value="Iniciar sesión" id="btnLogin">
+        </form>
+        <br>
+        <br>
+        <hr>
+        <!-- TERMINA EL LOGIN -->
+
+        <!-- COMIENZA EL REGISTRO -->
+        <h2>Registro de usuario</h2>
+        <form id="formRegistroUsuario">
+            <label for="inputNombreRegistro">Ingrese su nombre</label>
+            <input type="text" id="inputNombreRegistro">
+            <br>
+            <br>
+            <label for="inputUserRegistro">Ingrese su nombre de usuario</label>
+            <input type="text" id="inputUserRegistro">
+            <br>
+            <br>
+            <label for="inputFotoRegistro">Ingrese una foto</label>
+            <input type="file" id="inputFotoRegistro">
+            <br>
+            <br>
+            <label for="inputPasswordRegistro">Ingrese su contraseña</label>
+            <input type="password" id="inputPasswordRegistro">
+            <br>
+            <br>
+            <input type="button" value="Registrar usuario" id="btnRegister">
+        </form>
+    </div>
+    <!-- TERMINA EL REGISTRO -->
+
+    <!-- COMIENZA EL PERFIL IMPORTADOR -->
+    <div id="divImportador">
+        <input type="button" value="Cerrar sesión" id="btnLogOff1">
+
+        <!-- COMIENZA SOLICITUDES DE CARGA -->
+        <h2>Registro de solicitudes de carga</h2>
+        <form id="formRegistroSolicitudes">
+            <label for="selectMerchType">Tipo de mercadería:</label>
+            <select id="selectMerchType">
+                <option>Carga General</option>
+                <option>Refrigerado</option>
+                <option>Carga Peligrosa</option>
+            </select>
+            <br>
+            <br>
+            <label for="inputDescripcion">Ingrese una descripción de la mercadería</label>
+            <input type="text" id="inputDescripcion">
+            <br>
+            <br>
+            <label for="selectPuerto">Puerto de partida:</label>
+            <select id="selectPuerto">
+                <option>Puerto A</option>
+                <option>Puerto B</option>
+                <option>Puerto C</option>
+            </select>
+            <br>
+            <br>
+            <label for="inputContenedores">Ingrese la cantidad de contenedores</label>
+            <input type="number" id="inputContenedores">
+            <br>
+            <br>
+            <label for="selectNombreEmpresa">Ingrese el nombre de la empresa</label>
+            <select id="selectNombreEmpresa">
+                <option>RD299328</option>
+                <option>TA303898</option>
+                <option>JO775022</option>
+                <option>PT099755</option>
+            </select>
+            <br>
+            <br>
+            <input type="button" value="Registrar Solicitud" id="btnRegistrarSolicitud">
+        </form>
+        <!-- TERMINA SOLICITUDES DE CARGA -->
+        <br>
+        <br>
+        <hr>
+        <h2>Buscador de solicitudes</h2>
+        <!-- COMINEZA BUSCADOR DE SOLICITUDES -->
+        <form id="formConsulta">
+            <label for="inputSearch">Ingrese texto a buscar:</label>
+            <input type="text" id="inputSearch">
+            <br>
+            <br>
+            <input type="button" value="Buscar" id="btnSearch">
+            <br>
+            <br>
+            <p id="pMessageBuscador"></p>
+        </form>
+        <!-- TERMINA BUSCADOR DE SOLICITUDES -->
+        <br>
+        <br>
+        <hr>
+        <h2></h2>
+        <!-- COMIENZA CONSULTA DE SOLICITUDES -->
+        <label>Mostrar solicitudes pendientes: </label>
+        <br>
+        <br>
+        <input type="button" value="Mostrar" id="btnMostrarSolicitudes">
+        <br>
+        <br>
+        <table id="tablaSolicitudes">
+        </table>
+        <!-- TERMINA CONSULTA DE SOLICITUDES -->
+        <br>
+        <br>
+        <br>
+        <hr>
+        <h2>Visualizador de información estadística</h2>
+        <!-- COMIENZA CONSULTA DE INFO ESTADISTICA -->
+        <input type="button" value="Mostrar" id="btnShowEstadisticas">
+        <br>
+        <br>
+        <p id="tablaEstadisticas"></p>
+        <table id="calendarioEstadisticas">
+
+        </table>
+        <p id="viajesEstadisticas"></p>
+        <!-- TERMINA CONSULTA DE INFO ESTADISTICA -->
+    </div>
+    <!-- TERMINA EL PERFIL IMPORTADOR -->
+
+    <!-- COMIENZA EL PERFIL EMPRESA -->
+    <div id="divEmpresa">
+        <input type="button" value="Cerrar sesión" id="btnLogOff2">
+        <!-- COMIENZA EL REGISTRO DE VIAJES -->
+        <h2>Organización de viajes</h2>
+        <form id="formRegistroViajes">
+            <label for="inputShipName">Nombre del buque</label>
+            <input type="text" id="inputShipName">
+            <br>
+            <br>
+            <label for="inputMaxContenedores">Cantidad máxima de contenedores</label>
+            <input type="number" id="inputMaxContenedores">
+            <br>
+            <br>
+            <label for="selectLineaCarga">Linea de carga</label>
+            <select id="selectLineaCarga">
+                <option>RD299328</option>
+                <option>TA303898</option>
+                <option>JO775022</option>
+                <option>PT099755</option>
+            </select>
+            <br>
+            <br>
+            <label>Fecha de llegada</label>
+            <input type="date" id="inputFecha">
+            <br>
+            <br>
+            <input type="button" value="Registrar viaje" id="btnRegistrarViaje">
+        </form>
+        <br>
+        <br>
+        <hr>
+        <!-- TERMINA EL REGISTRO DE VIAJES -->
+        <h2>Asignación de viajes</h2>
+        <!-- COMIENZA CREACIÓN DE COMBO DESPLEGABLE -->
+        <label for="selectViajes">Seleccione el viaje al que quiere asignar una solicitud</label>
+        <select id="selectViajes">
+
+        </select>
+        <br>
+        <br>
+        <label>Mostrar solicitudes pendientes:</label>
+        <br>
+        <br>
+        <input type="button" value="Mostrar" id="btnShowPendientes">
+        <br>
+        <br>
+        <table id="tablaPendientes">
+
+        </table>
+         <!-- TERMINA LA CREACIÓN DE COMBO DESPLEGABLE -->
+         <br>
+         <br>
+         <hr>
+         <!-- COMIENZA EL CHEQUEO DEL MANIFIESTO DE CARGA -->
+         <h2>Chequeo del manifiesto de carga</h2>
+         <form id="formManifiesto">
+            <label for="selectViajesEnCurso">Viajes en curso:</label>
+            <select id="selectViajesEnCurso">
+
+            </select>
+            <br>
+            <br>
+            <input type="button" value="Chequear manifiesto de carga" id="btnCheckManifiesto">
+            <br>
+            <br>
+            <table id="tablaManifiesto">
+
+            </table>
+         </form>
+         <!-- TERMINA EL CHEQUEO DE MANIFIESTO -->
+         <br>
+         <br>
+         <hr>
+         <!-- COMIENZA HABILITACIÓN DE IMPORTES DESHABILITADOS -->
+         <h2>Habilitación de importes deshabilitados</h2>
+         <form id="formIgnorarSolicitudes">
+            <label>Mostrar solicitudes de carga canceladas:</label>
+            <br>
+            <br>
+            <input type="button" Value="Mostrar" id="btnShowCanceladas">
+            <br>
+            <br>
+            <table id="tablaCanceladas">
+
+            </table>
+         </form>
+         <!-- TERMINA HABILITACION DE IMPORTES DESHABILITADOS -->
+         <br>
+         <br>
+         <hr>
+         <h2>Visualizador de listado de carga peligrosa</h2>
+         <!-- COMIENZA LISTADO DE CARGA PELIGROSA -->
+         <form id="formCargaPeligrosa">
+            <label for="selectViajeAInspeccionar">Viajes en curso:</label>
+            <select id="selectViajeAInspeccionar">
+
+            </select>
+            <br>
+            <br>
+            <input type="button" value="Chequear listado de carga peligrosa" id="btnCheckDanger">
+            <br>
+            <br>
+            <table id="tablaCargaPeligrosa">
+
+            </table>
+         </form>
+         <!-- TERMINA LISTADO DE CARGA PELIGROSA -->
+    </div>
+</body>
+
+</html>
